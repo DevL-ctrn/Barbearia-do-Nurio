@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Barbearia do Núrio | Estilo & Tradição</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: RYE + Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0d6c6;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, h4, .nav-links a, .btn, .hero-badge, .service-card h3, .stat-item h4, .cta h2, .footer-col h4 {
+            font-family: 'Rye', serif;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        p, .difer-item p, .service-card p, .preco {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Times New Roman para o nome da barbearia no header - MAIÚSCULAS, BRANCO, SEM ITÁLICO */
+        .logo-text {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 2px 2px 0px #7a4a2c;
+            font-style: normal;
+            text-transform: uppercase;
+        }
+        .logo-text span {
+            color: #c49a6c;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .navbar {
+            background: #0f0f0f;
+            border-bottom: 2px solid #c49a6c;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-img {
+            height: 55px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 400;
+            color: #ddd2c0;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #e6b17e;
+            border-bottom: 1px solid #c49a6c;
+        }
+        .btn-contato {
+            background: #c49a6c;
+            color: #0f0f0f !important;
+            padding: 0.5rem 1.3rem;
+            font-weight: 400;
+            transition: 0.2s;
+        }
+        .btn-contato:hover {
+            background: #dbb27c;
+            transform: scale(0.98);
+        }
+
+        .menu-hamburger {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #c49a6c;
+        }
+
+        /* HERO - SEM BORDA INFERIOR */
+        .hero {
+            background: linear-gradient(115deg, #11100e 0%, #1f1b16 100%);
+            padding: 80px 0 70px;
+            /* border-bottom removido */
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-badge {
+            background: #2a211b;
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.8rem;
+            color: #e6b17e;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid #c49a6c;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: #f2e0c0;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #bcab92;
+            max-width: 90%;
+            margin-bottom: 2rem;
+        }
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #c49a6c;
+            color: #0a0a0a;
+            padding: 0.9rem 2rem;
+            text-decoration: none;
+            font-weight: 400;
+            transition: 0.2s;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .btn-primary:hover {
+            background: #dcab79;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            border: 2px solid #c49a6c;
+            color: #e6b17e;
+            padding: 0.9rem 2rem;
+            text-decoration: none;
+            font-weight: 400;
+            background: transparent;
+        }
+        .btn-outline:hover {
+            background: #c49a6c20;
+            transform: translateY(-2px);
+        }
+        .hero-image img {
+            max-width: 100%;
+            box-shadow: 0 25px 40px -8px rgba(0,0,0,0.6);
+        }
+
+        /* SERVIÇOS - ESTILO GEOMÉTRICO SEM BORDA */
+        .servicos {
+            padding: 80px 0;
+            background: #12110f;
+        }
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem auto;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #eedbbc;
+            margin-bottom: 1rem;
+        }
+        .section-header p {
+            font-size: 1.1rem;
+            color: #9c8a74;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: #1e1915;
+            padding: 0 0 1.8rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+            border: none;
+            text-align: center;
+            overflow: hidden;
+            border-radius: 0px;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            background: #241e18;
+        }
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin: 1.2rem 0 0.5rem;
+            color: #e7cfaf;
+            padding: 0 1rem;
+        }
+        .service-card p {
+            color: #b8a68b;
+            margin-bottom: 0.8rem;
+            padding: 0 1rem;
+        }
+        .preco {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #e6b17e;
+            margin: 0.8rem 0 0;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        /* SOBRE */
+        .sobre {
+            background: #100e0c;
+            padding: 80px 0;
+        }
+        .sobre-flex {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .sobre-texto {
+            flex: 1.2;
+        }
+        .sobre-texto h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            color: #ebd5b0;
+        }
+        .sobre-texto p {
+            margin-bottom: 1rem;
+            color: #c2af95;
+        }
+        .stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-item h4 {
+            font-size: 2.4rem;
+            color: #e6b17e;
+            font-weight: 400;
+            min-width: 100px;
+        }
+        .stat-item p {
+            font-size: 0.9rem;
+            color: #bcab92;
+        }
+        .sobre-img img {
+            width: 100%;
+            display: block;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        /* DIFERENCIAIS COM IMAGENS REAIS */
+        .diferenciais {
+            padding: 70px 0;
+            background: #12110f;
+        }
+        .difer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .difer-item {
+            text-align: center;
+            padding: 0;
+            background: #1e1915;
+            border: 1px solid #3b2c20;
+            transition: 0.3s;
+            overflow: hidden;
+            border-radius: 0px;
+        }
+        .difer-item:hover {
+            transform: translateY(-5px);
+            border-color: #c49a6c;
+            background: #241e18;
+        }
+        .difer-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .difer-text {
+            padding: 1.2rem;
+        }
+        .difer-item h4 {
+            font-family: 'Rye', serif;
+            margin-bottom: 0.5rem;
+            color: #ebd5b0;
+            font-size: 1.3rem;
+        }
+        .difer-item p {
+            color: #9c8a74;
+            font-size: 0.9rem;
+        }
+
+        .cta {
+            background: linear-gradient(105deg, #1e1813 0%, #2d241c 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #f2e0c0;
+        }
+        .cta .btn-primary {
+            background: #c49a6c;
+            color: #0f0f0f;
+            margin-top: 1rem;
+        }
+
+        footer {
+            background: #080706;
+            color: #b7a07e;
+            padding: 48px 0 24px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-col h4 {
+            color: #e3c9a5;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .footer-col p, .footer-col a {
+            color: #b19773;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        .social i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #c49a6c;
+        }
+        .social a:hover i {
+            color: #e5bc88;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #2a241e;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #0f0d0b;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 1.5rem;
+                gap: 1.2rem;
+                z-index: 999;
+                border-bottom: 1px solid #c49a6c;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-hamburger {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .hero-content p {
+                max-width: 100%;
+            }
+            .container {
+                padding: 0 24px;
+            }
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            .logo-text {
+                font-size: 1rem;
+            }
+            .logo-img {
+                height: 40px;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero-grid {
+                flex-direction: column-reverse;
+            }
+            .stats {
+                justify-content: center;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <div class="logo-area">
+            <!-- IMAGEM REAL DO LOGO - Substitua o src pelo caminho da sua imagem real -->
+            <img class="logo-img" src="https://placehold.co/200x200/8B5A2B/C49A6C?text=Logo&font=playfair" alt="Logo Barbearia do Núrio">
+            <div class="logo-text">BARBEARIA <span>DO NÚRIO</span></div>
+        </div>
+        <div class="menu-hamburger" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home" class="active">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#sobre">História</a>
+            <a href="#contato" class="btn-contato">Agendar</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- HERO SEM BORDA INFERIOR -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-scissors"></i> ESTILO & TRADIÇÃO</div>
+                <h1>O corte que define <br> sua identidade.</h1>
+                <p>Navalha, tesoura e técnica impecável. Ambiente refinado e os melhores barbeiros da cidade. Barbearia do Núrio: tradição que transforma.</p>
+                <div class="btn-group">
+                    <a href="#contato" class="btn-primary">Agende seu horário <i class="fas fa-calendar-check"></i></a>
+                    <a href="#servicos" class="btn-outline">Nossos cortes</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&h=450&fit=crop" alt="Barbearia do Núrio">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS COM FOTOS REAIS - SEM BORDA -->
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experiências que elevam seu visual</h2>
+                <p>Do degrade ao clássico navalhado, atendimento personalizado e produtos premium.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="service-card">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&h=400&fit=crop" alt="Corte Degradê">
+                    <h3>Corte Degradê</h3>
+                    <p>Técnica moderna com máquina e tesoura, acabamento perfeito.</p>
+                    <div class="preco">450 MZN</div>
+                </div>
+                <div class="service-card">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&h=400&fit=crop" alt="Barba & Navalha">
+                    <h3>Barba & Navalha</h3>
+                    <p>Modelagem completa, toalha quente e hidratação profunda.</p>
+                    <div class="preco">350 MZN</div>
+                </div>
+                <div class="service-card">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&h=400&fit=crop" alt="Combo Premium">
+                    <h3>Combo Premium</h3>
+                    <p>Corte + Barba + Massagem + bebida premium exclusiva.</p>
+                    <div class="preco">720 MZN</div>
+                </div>
+                <div class="service-card">
+                    <img class="card-img" src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&h=400&fit=crop" alt="Corte Infantil">
+                    <h3>Corte Infantil</h3>
+                    <p>Atendimento lúdico e profissional para pequenos cavalheiros.</p>
+                    <div class="preco">400 MZN</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE com contador animado -->
+    <section id="sobre" class="sobre">
+        <div class="container sobre-flex">
+            <div class="sobre-texto">
+                <h2>Mais de uma década forjando estilo e atitude</h2>
+                <p>A Barbearia do Núrio nasceu no coração da cidade, fruto da paixão pela cultura das barbearias clássicas. Unimos o melhor do mundo moderno com a tradição do barbeiro de confiança. Aqui cada cliente é tratado como parte da família.</p>
+                <p>Com duas unidades e uma equipe de mestres barbeiros, carregamos a missão de elevar a autoestima e o estilo com técnicas refinadas, ambiente acolhedor e um toque de sofisticação.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h4 id="counterCortes">0</h4>
+                        <p>Cortes realizados</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>98%</h4>
+                        <p>Clientes fiéis</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>12</h4>
+                        <p>Prêmios de barbearia</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sobre-img">
+                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=550&h=450&fit=crop" alt="Espaço da barbearia tradicional">
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS COM FOTOS REAIS -->
+    <section class="diferenciais">
+        <div class="container">
+            <div class="section-header">
+                <h2>Por que escolher a Barbearia do Núrio?</h2>
+                <p>Atendimento, técnica e atmosfera de primeira linha</p>
+            </div>
+            <div class="difer-grid">
+                <div class="difer-item">
+                    <img class="difer-img" src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=400&h=300&fit=crop" alt="Open Barbershop">
+                    <div class="difer-text">
+                        <h4>Open Barbershop</h4>
+                        <p>Bebidas artesanais, café especial e whisky enquanto espera.</p>
+                    </div>
+                </div>
+                <div class="difer-item">
+                    <img class="difer-img" src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400&h=300&fit=crop" alt="Produtos Exclusivos">
+                    <div class="difer-text">
+                        <h4>Produtos Exclusivos</h4>
+                        <p>Pomadas, óleos e loções importadas.</p>
+                    </div>
+                </div>
+                <div class="difer-item">
+                    <img class="difer-img" src="https://images.unsplash.com/photo-1582651301057-e9c363b7a0b3?w=400&h=300&fit=crop" alt="Cadeiras de Luxo">
+                    <div class="difer-text">
+                        <h4>Cadeiras de Luxo</h4>
+                        <p>Máxima ergonomia e conforto real.</p>
+                    </div>
+                </div>
+                <div class="difer-item">
+                    <img class="difer-img" src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=400&h=300&fit=crop" alt="Higiene Total">
+                    <div class="difer-text">
+                        <h4>Higiene Total</h4>
+                        <p>Autoclave, lâminas descartáveis e toalhas individualizadas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA AGENDAMENTO -->
+    <section id="contato" class="cta">
+        <div class="container">
+            <h2>Agende seu horário e renove o visual</h2>
+            <p>Reserve seu corte ou barba pelo WhatsApp, ou preencha o formulário rápido. Atendemos com hora marcada.</p>
+            <a href="#" class="btn-primary" id="openContactModal"><i class="fab fa-whatsapp"></i> Falar com a Barbearia</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Barbearia do Núrio</h4>
+                <p>Mais que uma barbearia, um ponto de encontro para cavalheiros.</p>
+                <div class="social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <p><a href="#home">Início</a></p>
+                <p><a href="#servicos">Serviços</a></p>
+                <p><a href="#sobre">Nossa história</a></p>
+                <p><a href="#contato">Agendamento</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Contato direto</h4>
+                <p><i class="fas fa-phone-alt"></i> 84 252 0040</p>
+                <p><i class="fab fa-whatsapp"></i> 84 252 0040</p>
+                <p><i class="fas fa-map-marker-alt"></i> Avenida Patrice Lumumba nr 1177</p>
+            </div>
+            <div class="footer-col">
+                <h4>Funcionamento</h4>
+                <p>Segunda a Sexta: 8h – 19h</p>
+                <p>Sábados: 8h – 17h</p>
+                <p>Domingos: 9h – 14h</p>
+                <p style="color:#c49a6c;">Quartas e Feriados: Encerrados</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Barbearia do Núrio - Tradição e Estilo. Todos os direitos reservados.
+        </div>
+    </div>
+</footer>
+
+<!-- MODAL -->
+<div id="contactModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); backdrop-filter: blur(4px); justify-content:center; align-items:center; z-index:2000;">
+    <div style="background:#1f1b17; max-width:450px; width:90%; padding:2rem; position:relative; text-align:center; border:1px solid #c49a6c;">
+        <button id="closeModalBtn" style="position:absolute; right:20px; top:20px; background:none; border:none; font-size:1.8rem; cursor:pointer; color:#c49a6c;">&times;</button>
+        <i class="fas fa-scissors" style="font-size:2.8rem; color:#e6b17e; margin-bottom:0.5rem;"></i>
+        <h3 style="margin-bottom:0.8rem; color:#f2e0c0; font-family:'Rye',serif;">Reserve seu horário</h3>
+        <p style="margin-bottom:1.2rem; font-size:0.9rem;">Preencha e entraremos em contato.</p>
+        <form id="quickContactForm">
+            <input type="text" placeholder="Seu nome completo" required style="width:100%; padding:12px 16px; margin:8px 0; border:none; background:#2e2823; color:#e6d5bc;">
+            <input type="email" placeholder="E-mail" required style="width:100%; padding:12px 16px; margin:8px 0; border:none; background:#2e2823; color:#e6d5bc;">
+            <input type="tel" placeholder="WhatsApp com DDD" required style="width:100%; padding:12px 16px; margin:8px 0; border:none; background:#2e2823; color:#e6d5bc;">
+            <select style="width:100%; padding:12px 16px; margin:8px 0; background:#2e2823; color:#e6d5bc; border:none;">
+                <option>Prefere: Corte</option>
+                <option>Barba</option>
+                <option>Combo completo</option>
+                <option>Sombrancelha + Corte</option>
+            </select>
+            <button type="submit" style="background:#c49a6c; color:#0a0a0a; border:none; width:100%; padding:12px; font-weight:bold; margin-top:12px; cursor:pointer;">Enviar pedido <i class="fab fa-whatsapp"></i></button>
+        </form>
+        <p style="font-size:0.7rem; margin-top:14px; color:#b19773;">Entraremos em contato em até 15min.</p>
+    </div>
+</div>
+
+<script>
+    // Menu hamburger
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if(menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+        });
+    });
+
+    // Modal
+    const modal = document.getElementById('contactModal');
+    const openBtn = document.getElementById('openContactModal');
+    const closeBtn = document.getElementById('closeModalBtn');
+    function openModal() { modal.style.display = 'flex'; }
+    function closeModal() { modal.style.display = 'none'; }
+    if(openBtn) openBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+    const contactForm = document.getElementById('quickContactForm');
+    if(contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('✅ Agendamento solicitado! Em breve um barbeiro entrará em contato via WhatsApp.');
+            contactForm.reset();
+            closeModal();
+        });
+    }
+
+    // ANIMAÇÃO CONTADOR: conta de 0 até 2000 e depois exibe "2k"
+    const counterElement = document.getElementById('counterCortes');
+    let animated = false;
+    const targetNumber = 2000;
+    
+    function animateCounter() {
+        if(animated) return;
+        let current = 0;
+        const duration = 2500;
+        const stepTime = 20;
+        const steps = duration / stepTime;
+        const increment = targetNumber / steps;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if(current >= targetNumber) {
+                counterElement.innerText = "2k";
+                clearInterval(timer);
+            } else {
+                counterElement.innerText = Math.floor(current);
+            }
+        }, stepTime);
+        animated = true;
+    }
+
+    const sobreSection = document.getElementById('sobre');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting && !animated) {
+                animateCounter();
+                observer.unobserve(sobreSection);
+            }
+        });
+    }, { threshold: 0.4 });
+    if(sobreSection) observer.observe(sobreSection);
+
+    // highlight nav
+    const sections = document.querySelectorAll('section[id]');
+    function highlightNav() {
+        let scrollY = window.scrollY + 100;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if(scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                const id = section.getAttribute('id');
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+    window.addEventListener('scroll', highlightNav);
+    highlightNav();
+
+    // smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if(targetId === "#" || (targetId === "#contato" && this.id === "openContactModal")) return;
+            const targetElem = document.querySelector(targetId);
+            if(targetElem) {
+                e.preventDefault();
+                targetElem.scrollIntoView({ behavior: 'smooth' });
+                history.pushState(null, null, targetId);
+            }
+        });
+    });
+</script>
+</body>
+</html>
