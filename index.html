@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Barbearia do Núrio</title>
-    <!-- Font Awesome 6 -->
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts: RYE + Montserrat -->
+   
     <link href="https://fonts.googleapis.com/css2?family=Rye&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -33,7 +33,7 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Times New Roman para o nome da barbearia no header - MAIÚSCULAS, BRANCO, SEM ITÁLICO */
+        
         .logo-text {
             font-family: 'Times New Roman', Times, serif;
             font-size: 1.6rem;
@@ -119,11 +119,11 @@
             color: #a8a8a8;
         }
 
-        /* HERO - SEM BORDA INFERIOR */
+
         .hero {
             background: linear-gradient(115deg, #0d0d0d 0%, #1c1c1c 100%);
             padding: 80px 0 70px;
-            /* border-bottom removido */
+            
         }
         .hero-grid {
             display: flex;
@@ -191,7 +191,7 @@
             box-shadow: 0 25px 40px -8px rgba(0,0,0,0.6);
         }
 
-        /* SERVIÇOS - ESTILO GEOMÉTRICO SEM BORDA */
+        
         .servicos {
             padding: 80px 0;
             background: #121212;
@@ -303,7 +303,7 @@
             box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
         }
 
-        /* DIFERENCIAIS COM IMAGENS REAIS */
+
         .diferenciais {
             padding: 70px 0;
             background: #121212;
@@ -455,7 +455,7 @@
 <header class="navbar">
     <div class="nav-container">
         <div class="logo-area">
-            <!-- IMAGEM REAL DO LOGO - Substitua o src pelo caminho da sua imagem real -->
+            
             <img class="logo-img" src="barbearia.jpeg.jpeg" alt="Logo Barbearia do Núrio">
             <div class="logo-text">BARBEARIA DO NÚRIO</div>
         </div>
@@ -472,7 +472,7 @@
 </header>
 
 <main>
-    <!-- HERO SEM BORDA INFERIOR -->
+   
     <section id="home" class="hero">
         <div class="container hero-grid">
             <div class="hero-content">
@@ -490,7 +490,7 @@
         </div>
     </section>
 
-    <!-- SERVIÇOS COM FOTOS REAIS - SEM BORDA -->
+   
     <section id="servicos" class="servicos">
         <div class="container">
             <div class="section-header">
@@ -609,7 +609,7 @@
         </div>
     </section>
 
-    <!-- SOBRE com contador animado -->
+   
     <section id="sobre" class="sobre">
         <div class="container sobre-flex">
             <div class="sobre-texto">
@@ -625,10 +625,7 @@
                         <h4>98%</h4>
                         <p>Clientes fiéis</p>
                     </div>
-                    <div class="stat-item">
-                        <h4>3</h4>
-                        <p>Prêmios de barbearia</p>
-                    </div>
+                   
                 </div>
             </div>
             <div class="sobre-img">
@@ -637,7 +634,7 @@
         </div>
     </section>
 
-    <!-- DIFERENCIAIS COM FOTOS REAIS -->
+    
    <section class="diferenciais">
     <div class="container">
         <div class="section-header">
@@ -669,7 +666,7 @@
     </div>
 </section>
 
-    <!-- CTA AGENDAMENTO -->
+
     <section id="contato" class="cta">
         <div class="container">
             <h2>Agende seu horário e renove o visual</h2>
@@ -718,7 +715,7 @@
     </div>
 </footer>
 
-<!-- MODAL -->
+
 <div id="contactModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); backdrop-filter: blur(4px); justify-content:center; align-items:center; z-index:2000;">
     <div style="background:#1a1a1a; max-width:450px; width:90%; padding:2rem; position:relative; text-align:center; border:1px solid #a8a8a8;">
         <button id="closeModalBtn" style="position:absolute; right:20px; top:20px; background:none; border:none; font-size:1.8rem; cursor:pointer; color:#a8a8a8;">&times;</button>
@@ -742,7 +739,7 @@
 </div>
 
 <script>
-    // Menu hamburger
+   
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     if(menuToggle) {
@@ -756,7 +753,7 @@
         });
     });
 
-    // Modal
+
     const modal = document.getElementById('contactModal');
     const openBtn = document.getElementById('openContactModal');
     const closeBtn = document.getElementById('closeModalBtn');
@@ -769,13 +766,13 @@
     if(contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('✅ Agendamento solicitado! Em breve um barbeiro entrará em contato via WhatsApp.');
+            alert(' Agendamento solicitado! Em breve um barbeiro entrará em contato via WhatsApp.');
             contactForm.reset();
             closeModal();
         });
     }
 
-    // ANIMAÇÃO CONTADOR: conta de 0 até 2000 e depois exibe "2k"
+    
     const counterElement = document.getElementById('counterCortes');
     let animated = false;
     const targetNumber = 2000;
@@ -811,7 +808,7 @@
     }, { threshold: 0.4 });
     if(sobreSection) observer.observe(sobreSection);
 
-    // highlight nav
+
     const sections = document.querySelectorAll('section[id]');
     function highlightNav() {
         let scrollY = window.scrollY + 100;
@@ -832,7 +829,6 @@
     window.addEventListener('scroll', highlightNav);
     highlightNav();
 
-    // smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
